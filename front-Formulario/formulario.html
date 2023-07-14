@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Seguro Empresarial</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+    <body>
+        <h1>Seguro Empresarial</h1>
+    
+        <form id="form"method="get" action=".">
+            <div class="row">
+                <label for="nome" ></label>
+                <input type="text" id="nome"  placeholder= "Nome" class="col-8" minlength="3" onblur="nomeMaiusculo()" required >
+                
+                <label for="cpf" ></label>
+                <input type="text" id="cpf" placeholder= "CPF(apenas números)" class="col-4" minlength="11" maxlength="14" onchange="blacklist()" required>
+            </div>
+
+            <div class="row">
+                <label for="inicio_vigencia"></label>
+                <input   placeholder= "Início de Vigência" type="text" onfocus="(this.type='date')" id="inicio_vigencia"  class="col-4" required>
+
+                <label for="fim_vigencia"></label>
+                <input placeholder= "Fim de Vigencia" type="text" onfocus="(this.type='date')" id="fim_vigencia"  class="col-4" required>
+
+                <label for="dias_vigencia"></label>
+                <input type="number" id="dias_vigencia" placeholder= "Dias de Vigencia" class="col-4" disabled>
+            </div>  
+
+            <br>
+            <br>
+ 
+            <div class="row">
+                <label for="cep"></label>
+                <input name="cep" type="text" id="cep" value="" placeholder= "Cep" class="col-6"  onchange="cepRestritos(this.value)" required >
+
+                <label for="estado"></label>
+                <input name="estado" type="text" id="estado" placeholder= "Estado" class="col-6" >
+            </div>
+        
+            <div class="row"> 
+                <label for="cidade"></label>
+                <input name="cidade" type="text" id="cidade" placeholder= "Cidade" class="col-6">
+
+                <label for="logradouro"></label>
+                <input name="logradouro" type="text" id="logradouro" placeholder="Logradouro(Av., Rua, etc.)" class="col-6">
+            </div>    
+      
+            <div class="row">        
+                <label for="bairro"></label>
+                <input name="bairro" type="text" id="bairro" placeholder= "Bairro" class="col-12">
+            </div>
+       
+
+            <div class="row"> 
+                <label for="complemento"></label>
+                <input type="text" id="complemento" placeholder= "Complemento"class="col-8">
+
+                <label for="numero"></label>
+                <input type="number" id="numero" placeholder= "N°"class="col-4" required >
+            </div>
+
+            <br>
+            <br>
+
+            <div class="row"> 
+                <label for="cobertura"></label>
+                <select name="cobertura" id="cobertura" class="col-6"  onchange="escolhaCobertura()" required ><option value="">Selecione</option></select>
+            
+                <label for="valor_premio"></label>
+                <input type="number" id="valor_premio" placeholder= "Valor do Premio" class="col-6" onblur="verificaPremio()" >
+            </div>
+
+        <button type="button" id="enviar">Enviar</button>
+
+    </form>
+
+
+    <script src="server.js" defer></script>
+    <script src="index.js" defer></script>
+</body>
+</html>
