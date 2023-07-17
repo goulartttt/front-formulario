@@ -174,7 +174,17 @@ async function cepRestritos(valor){
     coberturas = resp.coberturas
 })();
 
+function liberaValorPremio() {
+    if (selectCoberturas.value !== "" || null ) {
+        valorPremio.disabled = false
+    }else{
+        valorPremio.disabled = true
+    }
+    
+}
+
 let coberturaSelecionada = null
+
 
 function escolhaCobertura() {
     let idCobertura = document.getElementById("cobertura");

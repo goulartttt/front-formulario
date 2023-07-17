@@ -71,10 +71,10 @@
 
             <div class="row"> 
                 <label for="cobertura"></label>
-                <select name="cobertura" id="cobertura" class="col-6"  onchange="escolhaCobertura()" required ><option value="">Selecione</option></select>
+                <select name="cobertura" id="cobertura" class="col-6"   onchange="escolhaCobertura(), liberaValorPremio()"  required ><option value="">Selecione</option></select>
             
                 <label for="valor_premio"></label>
-                <input type="number" id="valor_premio" placeholder= "Valor do Premio" class="col-6" onblur="verificaPremio()" >
+                <input type="number" id="valor_premio" placeholder= "Valor do Premio" class="col-6" onblur="verificaPremio()" disabled >
             </div>
 
         <button type="button" id="enviar">Enviar</button>
